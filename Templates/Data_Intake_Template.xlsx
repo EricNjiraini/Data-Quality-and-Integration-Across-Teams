@@ -1,1 +1,6 @@
+| Field Name     | Description                | Data Type | Required |
+| -------------- | -------------------------- | --------- | -------- |
+| Customer\_ID   | Unique customer identifier | Integer   | Yes      |
+| Purchase\_Date | Date of purchase           | Date      | Yes      |
+| Amount         | Total transaction amount   | Float     | Yes      |
 
