@@ -1,14 +1,17 @@
-# Validation Rules in R
-# These rules check data types, ranges, and missing values.
+-- SQL Script for Data Integrity Checks
 
-validate_data <- function(df) {
-  print("Summary of Dataset:")
-  print(summary(df))
+-- Check for NULLs in critical columns
+SELECT 'column_name' AS column, COUNT(*) AS null_count
+FROM your_table
+WHERE column_name IS NULL;
 
-  print("Missing Values by Column:")
-  print(colSums(is.na(df)))
+-- Check for duplicate primary keys
+SELECT primary_key_column, COUNT(*) 
+FROM your_table
+GROUP BY primary_key_column
+HAVING COUNT(*) > 1;
 
-  print("Data Types:")
-  print(sapply(df, class))
-}
-
+-- Check data type mismatches or outliers
+SELECT *
+FROM your_table
+WHERE amount < 0 OR amount > 100000;
